@@ -1,0 +1,33 @@
+<?page title="Asya - Arya" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<div align="center" width="100%" height="100%">
+		<window id="baseController" width="100%" height="100%" border="normal"
+			apply="tr.com.agem.arya.interpreter.utils.BaseController">
+			<borderlayout style="border: none;" width="100%" height="100%">
+				<north size="35px" border="0"
+					style="border: none;background: SteelBlue;">
+					<div align="center">
+						<label
+							style="border: none;font-family: Cambria;font-size: xx-large;color: white;font-weight: bold;"
+							value="ARYA" />
+					</div>
+				</north>
+				<center id="g_center" style="border: none;">
+					<div align="center">
+						<div align="left" id="menuContainer" width="100%" height="50px" />
+						<div align="left" id="componentContainer" width="100%" height="100%" >
+							<include id="login" src="login.zul" height="500px"/>
+						</div>
+					</div>
+				</center>
+				<south size="120px" style="border: none;">
+					<div align="right">
+						<label id="aryaMessage" style="color: #A00; font-weight: bold"></label>
+						<image src="img/AGEM.jpg" height="100px"/>
+					</div>
+				</south>
+			</borderlayout>
+		</window>
+	</div>
+</zk>

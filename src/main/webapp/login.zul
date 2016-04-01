@@ -1,0 +1,49 @@
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"
+	xmlns:h="http://www.w3.org/1999/xhtml">
+	<window width="100%" height="100%">
+		<div align="center">
+			<image src="/img/user.png" id="imgUser" align="center" />
+		</div>
+		<div align="center">
+			<window id="loginWindow" apply="tr.com.agem.arya.interpreter.utils.LoginController"
+				border="normal" width="500px" title="ARYA">
+				<timer id="errorTimer" delay="2000" repeats="false"
+					onTimer="errorLabel.value = null" />
+				<label id="errorLabel" style="color:red;" />
+				<grid id="loginGrid">
+					<rows>
+						<row>
+							<label value="Kullanıcı Adı" />
+							<textbox id="username" width="200px" maxlength="20"
+								value="agem" constraint="no empty" />
+						</row>
+						<row>
+							<label value="Parola" />
+							<textbox id="password" type="password" width="200px"
+								maxlength="20" value="agem" constraint="no empty" />
+						</row>
+					</rows>
+				</grid>
+				<div style="text-align: right; padding: 10px">
+				<button id="loginButton" label="Tamam" image="/img/user.gif" />
+				</div>
+				<grid id="passwordForgetGrid" visible="false">
+					<rows>
+						<row>
+							<label value="E-Posta" />
+							<textbox id="email" value="" width="200px" constraint="no empty" />
+						</row>
+						<row spans="2">
+							<button id="passwordForgetButton" label="Gönder"
+								image="/img/send_mail.png" />
+						</row>
+						<row spans="2">
+							<button id="loginPageButton" label="Giriş Sayfası" image="/img/user.gif" />
+						</row>
+					</rows>
+				</grid>
+			</window>
+		</div>
+	</window>
+</zk>
