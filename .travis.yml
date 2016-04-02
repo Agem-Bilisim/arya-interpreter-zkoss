@@ -1,0 +1,7 @@
+language: java
+sudo: false
+script: mvn clean verify
+before_install:
+ - mkdir -p arya-dep && cd arya-dep
+ - git clone --depth 1 https://github.com/Agem-Bilisim/arya.git
+ - cd arya && mvn clean install -DskipTests
