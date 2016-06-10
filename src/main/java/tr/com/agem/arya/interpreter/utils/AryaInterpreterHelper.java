@@ -59,6 +59,7 @@ import tr.com.agem.arya.interpreter.parser.AryaParserAttributes;
 import tr.com.agem.arya.interpreter.script.ElementFunctions;
 import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
 import tr.com.agem.arya.metadata.interpreter.IAryaTemplate;
+import tr.com.agem.core.exception.AryaException;
 import tr.com.agem.core.gateway.model.AryaRequest;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.utils.AryaUtils;
@@ -102,7 +103,7 @@ public class AryaInterpreterHelper {
 			HttpEntity entity = response.getEntity();
 			
 			result = EntityUtils.toString(entity, "UTF-8");
-			
+
 		} catch (ParseException | IOException e) {
 			e.printStackTrace();
 		}
@@ -162,6 +163,10 @@ public class AryaInterpreterHelper {
 			}
 			
 			populateView(response.getData(), action, main, tab, tabValue);
+		}
+		
+		if (response.isError() && response.getMessage() != null) {
+			setMessage(main, response.getMessage());
 		}
 		
 	}
@@ -337,7 +342,10 @@ public class AryaInterpreterHelper {
 		catch (Exception e ) {
 			main.getMessage().setValue("");
 		}
+	}
 	
+	public static void setMessage(AryaMain main, String message) {
+		main.getMessage().setValue(message);
 	}
 	
 	public static JSONArray getJSONArray(String data) {

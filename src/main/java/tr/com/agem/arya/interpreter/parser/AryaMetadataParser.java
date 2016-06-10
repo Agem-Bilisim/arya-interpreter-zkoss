@@ -18,9 +18,9 @@ import tr.com.agem.arya.interpreter.component.AryaTemplate;
 import tr.com.agem.arya.interpreter.component.ComponentFactory;
 import tr.com.agem.arya.interpreter.component.menu.IAryaMenu;
 import tr.com.agem.arya.interpreter.components.base.AryaMain;
-import tr.com.agem.arya.interpreter.utils.AryaException;
 import tr.com.agem.arya.interpreter.utils.AryaInterpreterHelper;
 import tr.com.agem.arya.metadata.interpreter.IAryaComponent;
+import tr.com.agem.core.exception.AryaException;
 import tr.com.agem.core.gateway.model.AryaResponse;
 import tr.com.agem.core.property.reader.PropertyReader;
 
